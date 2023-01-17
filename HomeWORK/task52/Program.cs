@@ -23,16 +23,18 @@ void PrintArray(int[,] array)
     }
 }
 
-int ArithmeticMean(int[,] array)
+void ArithmeticMean(int[,] array)
 {
-    int count = array.GetLength(1);
-    int sum = 0;
-    for (int i = 0; i < array.GetLength(0); i++)
-        for (int j = 0; j < array.GetLength(1); j++)
+    double sum = 0;
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            if (/*условие*/) sum = sum + array[i, j];
+            sum += array[i, j];
         }
-    return sum;
+        Console.Write($"{Math.Round(sum = sum / array.GetLength(0),2)} ");
+        sum = 0;
+    }
 }
 
 
@@ -43,4 +45,4 @@ int cols = Convert.ToInt32(Console.ReadLine());
 int [,] array = new int[rows,cols ];
 FillArray(array);
 PrintArray(array);
-Console.WriteLine($"Сумма элементов по столбцам: {ArithmeticMean(array)}");
+ArithmeticMean(array);
