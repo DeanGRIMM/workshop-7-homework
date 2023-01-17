@@ -35,19 +35,12 @@ void PrintArray(int[,] array)
 }
 void Search(int[,] array)
 {
-    try
-    {
-        for (int i=0;i<array.GetLength(0);i++)
-            for (int j=0;j<array.GetLength(1);j++)
-                if (array[i,j] == N) 
-                {
-                    Console.WriteLine($"искомое число в строке {i} и в столбце {j}");
-                    break;
-                }
-                else Console.WriteLine("такого числа в массиве нет");
-    }
-    catch
-    {
-        Console.WriteLine("вы ввели некоретные данные");
-    }
+    for (int i=0; i<array.GetLength(0); i++)
+        for (int j=0; j<array.GetLength(1); j++)
+            if (array[i,j] == N) 
+            {
+                Console.WriteLine($"искомое число в строке {i} и в столбце {j}");
+                break;
+            }
+            else Console.WriteLine("такого числа в массиве нет");
 }
